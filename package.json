@@ -1,0 +1,24 @@
+{
+  "name": "mockjs-serv",
+  "version": "0.0.3",
+  "description": "mockjs serv sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mockjs",
+    "serv"
+  ],
+  "author": "adi",
+  "license": "ISC",
+  "repository": "https://git.coding.net/twlk28/mockjs-serv.git",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mockjs": "^1.0.1-beta3",
+    "nedb": "^1.8.0",
+    "public-ip": "^2.3.5",
+    "yargs": "^8.0.2"
+  }
+}

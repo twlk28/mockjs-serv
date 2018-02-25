@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title> Mock List </title>
+    <link href="css/global.css" rel="stylesheet">
+    <script src="js/lib/clipboard.js"></script>
+	<script src='js/lib/mock.js'></script>
+	<script src="js/lib/ace-min-noconflict/ace.js"></script>
+</head>
+
+<body>
+
+<div class="wrap">
+	<input type="text" class="searchbar pure-input-rounded">
+	<a class="btn-add" href="#" data-action="new">add</a>
+
+	<div class="list">
+		
+	</div>
+</div>
+
+<script src="js/card.js"></script>
+<script>
+	// utils
+	var e = document.querySelector.bind(document)
+	var log = console.log.bind(console)
+	function ajax(method, path, headers, data, cb){
+		method = method.toUpperCase()
+	    var r = new XMLHttpRequest()
+	    r.open(method, path, true)
+	    if (data){
+	    	r.setRequestHeader('Content-Type', 'application/json')	
+	    }
+	    headers && Object.keys(headers).forEach(function(k){
+	        r.setRequestHeader(k, headers[k])
+	    })
+	    r.onreadystatechange = function(){
+	        if (r.readyState === 4){
+	            var resp = JSON.parse(r.response)
+	            cb && cb.call(null, resp)
+	        }
+	    }
+	    var _d = data? JSON.stringify(data) : null
+	    r.send(_d)
+	}
+	function appendStyle(cssText){
+		var style = document.createElement('style')
+		style.type = 'text/css'
+		style.appendChild(document.createTextNode(cssText))
+		e('head').appendChild(style)
+	}
+	var appendHtml = function(element, html) {
+		element.insertAdjacentHTML('beforeend', html)
+	}
+
+	// supp
+	var $root = e('.wrap')
+	var $list = e('.list')
+	var $searchbar = e('.searchbar')
+	var routes = {
+		'new': ['post', 'http://{{host}}/mock'],
+		'delete': ['delete', 'http://{{host}}/mock/<id>'],
+		'update': ['put', 'http://{{host}}/mock/<id>'],
+		'load': ['get', 'http://{{host}}/mock/<id>'],
+		'query': ['get', 'http://{{host}}/mocks'],
+	}
+	
+	var templateItem = function(item){
+		return `
+			<div class="item" data-id="${item.id}" data-action="edit">
+				<a href="#" class="item__delete" data-action="delete">delete</a>
+				<span class="item__url" >${item.url}</span>
+				<span class="item__title" data-action="edit">${item.title}</span>
+			</div>
+		`
+	}
+
+	// event
+	function bindEvents(){
+		onSearchBarInput()
+		onClick()
+		onPlaygroundSubmit()
+		onCopy()
+		onESC()
+	}
+
+	function onPlaygroundSubmit(){
+		Card.submitCallback(function(mockItem){
+			if (mockItem.id){
+				requestUpdate(mockItem.id, mockItem, function(){
+					requestQuery()
+				})
+			}
+			else {
+				requestNew(mockItem, function(){
+					requestQuery()
+				})
+			}
+		})
+	}
+
+	function onSearchBarInput(){
+		$searchbar.addEventListener('input', function(ev){
+			requestQuery()
+		})
+	}
+
+	function onClick(){
+		$root.addEventListener('click', function(ev){
+			var dict = {
+				'delete': actionDelete,
+				'edit': actionEdit,
+				'new': actionNew,
+			}
+			var self = ev.target
+			var actionName = self.dataset.action
+			var actionHandler = dict[actionName]
+			actionHandler && actionHandler.call(self, ev)
+		})
+	}
+
+	function onCopy(){
+		var clipboard = new Clipboard('.item__url', {
+		    text: function(trigger) {
+		        return trigger.textContent
+		    }
+		})
+		clipboard.on('success', function(e) {
+			e.trigger.classList.add('-hili')
+			setTimeout(function(){
+				e.trigger.classList.remove('-hili')	
+			}, 1000)
+		})
+	}
+
+	function onESC(){
+		document.addEventListener('keydown', function(event){
+			if ( event.keyCode == 27 ) {
+		        event.preventDefault()
+		        Card.hide()
+		        return false
+		    }
+		    return true
+		})
+	}
+	
+	// action, support for: event
+
+	function actionNew(ev){
+		Card.show(null)
+	}
+
+	function actionEdit(ev){
+		var node = this.closest('[data-id]') || this
+		var id = node.dataset.id
+		requestLoad(id, function(mockItem){
+			Card.show(mockItem)
+		})
+	}
+
+	function actionDelete(ev){
+		var id = this.closest('[data-id]').dataset.id
+		requestDelete(id, function(){
+			requestQuery()
+		})
+	}
+
+	// HTTPRequest, support for: action, event
+	function requestDelete(id, cb){
+		var method = routes['delete'][0]
+		var path = routes['delete'][1].replace('<id>', id)
+		ajax(method, path, null, null, function (resp) {
+			cb && cb.call(null)
+		})
+	}
+
+	function requestLoad(id, cb){
+		var method = routes['load'][0]
+		var path = routes['load'][1].replace('<id>', id)
+		ajax(method, path, null, null, function(resp){
+			cb && cb.call(null, resp)
+		})
+	}
+
+	function requestQuery(){
+		var q = $searchbar.value
+		var queryComponent = '?q='+q
+		var method = routes['query'][0]
+		var path = routes['query'][1]+queryComponent
+		var headers = {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		}
+		ajax(method, path, headers, null, function(resp){
+			var list = resp
+			var snippet = list.map(function(e){
+				return templateItem(e)
+			}).join('')
+			$list.innerHTML = snippet
+		})
+	}
+
+	function requestUpdate(id, data, cb){
+		var method = routes['update'][0]
+		var path = routes['update'][1].replace('<id>', id)
+		ajax(method, path, null, data, function (resp) {
+			cb && cb.call(null, resp)
+		})
+	}
+
+	function requestNew(data, cb){
+		var method = routes['new'][0]
+		var path = routes['new'][1]
+		var headers = {
+		}
+		ajax(method, path, headers, data, function (resp) {
+			cb && cb.call(null, resp)
+		})
+	}
+
+	// main
+	function main(){
+		requestQuery()
+		bindEvents()
+	}
+	main() 
+
+</script>
+</body>
+
+</html>
