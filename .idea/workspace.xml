@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="217ac5a2-77d3-4383-b5f6-af93d5009cd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/route/api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/route/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/route/mock.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/route/api.js" afterPath="$PROJECT_DIR$/route/api.js" />
     </list>
     <ignored path="mockjs-serv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +38,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="helper.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="helper.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/helper.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="195">
@@ -57,8 +53,8 @@
           <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/route/api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+                <state relative-caret-position="75">
+                  <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#39#0" expanded="false" />
                   </folding>
@@ -66,12 +62,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tpl/_index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="876">
-                  <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
-                  <folding />
+                <state relative-caret-position="174">
+                  <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+                  <folding>
+                    <marker date="1503222027000" expanded="true" signature="2217:2414" placeholder="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -127,8 +125,8 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                <state relative-caret-position="630">
+                  <caret line="44" column="17" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#37#0" expanded="false" />
                   </folding>
@@ -166,8 +164,8 @@
         <option value="$PROJECT_DIR$/lib/helper.js" />
         <option value="$PROJECT_DIR$/route/main.js" />
         <option value="$PROJECT_DIR$/route/mock.js" />
-        <option value="$PROJECT_DIR$/route/api.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/route/api.js" />
       </list>
     </option>
   </component>
@@ -255,35 +253,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockjs-serv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockjs-serv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="route" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockjs-serv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockjs-serv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,12 +369,12 @@
       <updated>1497588792461</updated>
       <workItem from="1497588794620" duration="28841000" />
       <workItem from="1507889627389" duration="3081000" />
-      <workItem from="1519552089530" duration="4149000" />
+      <workItem from="1519552089530" duration="5892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36071000" />
+    <option name="totallyTimeSpent" value="37814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1676" height="1027" extended-state="6" />
@@ -471,7 +441,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
-          <folding />
+          <folding>
+            <marker date="1503222027000" expanded="true" signature="2217:2414" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -515,7 +487,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
-          <folding />
+          <folding>
+            <marker date="1503222027000" expanded="true" signature="2217:2414" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -523,6 +497,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -560,13 +535,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/test-data" />
-    <entry file="file://$PROJECT_DIR$/db/mocks.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/card.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -601,14 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Mocks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -637,6 +597,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc;n#sendJSON#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/route/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -649,30 +619,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/route/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="75">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/mocks.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="630">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="17" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/helper.js">
+    <entry file="file://$PROJECT_DIR$/tpl/_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="174">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc;n#sendJSON#0" expanded="false" />
+            <marker date="1503222027000" expanded="true" signature="2217:2414" placeholder="..." />
           </folding>
         </state>
       </provider>

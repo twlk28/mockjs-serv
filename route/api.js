@@ -6,7 +6,7 @@ helper = require('../lib/helper')
 var Mocks = require('../model/Mocks')
 var MockJS = require('mockjs')
 
-var all = {
+var load = {
     path: '/api/:id',
     method: 'all',
     func: function (req, resp) {
@@ -33,6 +33,6 @@ var all = {
 }
 
 
-var routes = [all]
+var routes = [load]
 
 module.exports.routes = routes
